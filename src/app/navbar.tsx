@@ -51,7 +51,7 @@ const Navbar = () => {
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <Share2 className="h-8 w-8 text-gray-800" />
+              <Share2 className="h-8 w-8 text-gray-800 transform scale-x-[-1]" />
               <span className="text-xl font-bold text-primary">AgentThis</span>
             </div>
             <div className="flex items-center">
@@ -137,8 +137,8 @@ const Navbar = () => {
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Share2 className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">AgentThis</span>
+              <Share2 className="h-8 w-8 text-gray-800 transform scale-x-[-1]" />
+              <span className="text-xl font-bold text-primary">AgentThis</span>
             </div>
             <Sheet>
               <SheetTrigger asChild>
@@ -150,8 +150,8 @@ const Navbar = () => {
                 <SheetHeader>
                   <SheetTitle>
                     <div className="flex items-center gap-2">
-                      <Share2 className="h-8 w-8 text-primary" />
-                      <span className="text-xl font-bold">AgentThis</span>
+                      <Share2 className="h-8 w-8 text-gray-800 transform scale-x-[-1]" />
+                      <span className="text-xl font-bold text-primary">AgentThis</span>
                     </div>
                   </SheetTitle>
                 </SheetHeader>
