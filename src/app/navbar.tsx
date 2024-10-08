@@ -1,4 +1,4 @@
-import { Book, ChartArea, DollarSign, Lock, Menu, Sunset, Trees, Zap } from 'lucide-react';
+import { ChartArea, DollarSign, Lock, Menu } from 'lucide-react';
 
 import {
   Accordion,
