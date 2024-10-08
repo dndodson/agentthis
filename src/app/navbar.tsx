@@ -186,7 +186,7 @@ const Navbar = () => {
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="products" className="border-b-0">
                       <AccordionTrigger className="mb-4 py-0 font-semibold hover:no-underline">
-                        Products
+                        Features
                       </AccordionTrigger>
                       <AccordionContent className="mt-2">
                         {subMenuItemsOne.map((item, idx) => (
@@ -210,17 +210,15 @@ const Navbar = () => {
                         ))}
                       </AccordionContent>
                     </AccordionItem>
-                    <AccordionItem value="resources" className="border-b-0">
-                      <AccordionTrigger className="py-0 font-semibold hover:no-underline">
-                        Team
-                      </AccordionTrigger>
-                    </AccordionItem>
                   </Accordion>
+                  <a href="#" className="font-semibold">
+                    Blog
+                  </a>
                   <a href="#" className="font-semibold">
                     Pricing
                   </a>
                   <a href="#" className="font-semibold">
-                    Blog
+                    Team
                   </a>
                 </div>
                 <div className="border-t pt-4">
