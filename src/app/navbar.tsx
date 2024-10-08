@@ -1,4 +1,4 @@
-import { ChartArea, DollarSign, Lock, Menu } from 'lucide-react';
+import { ChartArea, DollarSign, Lock, Menu, Share2 } from 'lucide-react';
 
 import {
   Accordion,
@@ -51,31 +51,15 @@ const Navbar = () => {
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <img
-                src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                className="w-8"
-                alt="logo"
-              />
-              <span className="text-xl font-bold">AgentThis</span>
+              <Share2 className="h-8 w-8 text-gray-800" />
+              <span className="text-xl font-bold text-primary">AgentThis</span>
             </div>
             <div className="flex items-center">
-              <a
-                className={cn(
-                  'text-muted-foreground',
-                  navigationMenuTriggerStyle,
-                  buttonVariants({
-                    variant: 'ghost',
-                  }),
-                )}
-                href="#"
-              >
-                Home
-              </a>
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem className="text-muted-foreground">
                     <NavigationMenuTrigger>
-                      <span>Features</span>
+                      <span>Platform</span>
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="w-80 p-3">
@@ -153,11 +137,7 @@ const Navbar = () => {
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <img
-                src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                className="w-8"
-                alt="logo"
-              />
+              <Share2 className="h-8 w-8 text-primary" />
               <span className="text-xl font-bold">AgentThis</span>
             </div>
             <Sheet>
@@ -170,11 +150,7 @@ const Navbar = () => {
                 <SheetHeader>
                   <SheetTitle>
                     <div className="flex items-center gap-2">
-                      <img
-                        src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                        className="w-8"
-                        alt="logo"
-                      />
+                      <Share2 className="h-8 w-8 text-primary" />
                       <span className="text-xl font-bold">AgentThis</span>
                     </div>
                   </SheetTitle>

@@ -1,3 +1,8 @@
+'use client';
+
+import { Share2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
+
 const integrations = [
   [
     {
@@ -68,6 +73,20 @@ const integrations = [
 ];
 
 const Hero = () => {
+  const [rotations, setRotations] = useState<number[]>([]);
+  const [animations, setAnimations] = useState<string[]>([]);
+
+  useEffect(() => {
+    const newRotations = Array(15).fill(0).map(() => Math.random() * 360);
+    const newAnimations = Array(15).fill(0).map(() => {
+      const direction = Math.random() > 0.5 ? 'clockwise' : 'counterclockwise';
+      const duration = 5 + Math.random() * 10; // Random duration between 5 and 15 seconds
+      return `spin-${direction} ${duration}s linear infinite`;
+    });
+    setRotations(newRotations);
+    setAnimations(newAnimations);
+  }, []);
+
   return (
     <section className="relative overflow-hidden px-16">
       <div className="absolute inset-0 overflow-hidden">
@@ -101,10 +120,11 @@ const Hero = () => {
           <div className="-mx-[calc(theme(container.padding))] w-[calc(100%+2*theme(container.padding))] shrink-0 bg-background px-[calc(theme(container.padding))] pt-32 md:w-1/2 md:bg-transparent md:pb-32">
             <div className="flex flex-col items-start text-left">
               <div className="max-w-sm">
-                <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
-                  AgentThis
+                <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl text-center">
+                  <span className="text-gray-800">The </span>
+                  <span className="text-primary">agentic</span>
+                  <span className="text-gray-800"> internet is here</span>
                 </h1>
-                <h3 className="text-2xl font-bold">Introducing the agentic internet</h3>
               </div>
             </div>
           </div>
@@ -112,13 +132,17 @@ const Hero = () => {
             <div className="flex flex-col gap-16 pb-8 pt-12 md:py-32">
               {integrations.map((line, i) => (
                 <div key={i} className="flex gap-x-24 odd:-translate-x-24">
-                  {line.map((integration) => (
+                  {line.map((integration, index) => (
                     <div
                       key={integration.id}
                       className="size-24 rounded-xl bg-background"
+                      style={{
+                        transform: `rotate(${rotations[i * 5 + index]}deg)`,
+                        animation: animations[i * 5 + index],
+                      }}
                     >
-                      <div className="size-full bg-muted/20 p-4">
-                        {integration.icon}
+                      <div className="size-full bg-muted/20 p-4 flex items-center justify-center">
+                        <Share2 className="text-gray-800" size={48} />
                       </div>
                     </div>
                   ))}
