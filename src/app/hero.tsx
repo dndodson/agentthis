@@ -73,18 +73,19 @@ const integrations = [
 ];
 
 const Hero = () => {
-  const [rotations, setRotations] = useState<number[]>([]);
-  const [animations, setAnimations] = useState<string[]>([]);
+  const [iconStyles, setIconStyles] = useState<Array<{ transform: string; animation: string }>>([]);
 
   useEffect(() => {
-    const newRotations = Array(15).fill(0).map(() => Math.random() * 360);
-    const newAnimations = Array(15).fill(0).map(() => {
+    const newIconStyles = Array(15).fill(0).map(() => {
+      const initialRotation = Math.random() * 360;
       const direction = Math.random() > 0.5 ? 'clockwise' : 'counterclockwise';
       const duration = 5 + Math.random() * 10; // Random duration between 5 and 15 seconds
-      return `spin-${direction} ${duration}s linear infinite`;
+      return {
+        transform: `rotate(${initialRotation}deg)`,
+        animation: `spin-${direction} ${duration}s linear infinite`,
+      };
     });
-    setRotations(newRotations);
-    setAnimations(newAnimations);
+    setIconStyles(newIconStyles);
   }, []);
 
   return (
@@ -105,7 +106,7 @@ const Hero = () => {
               <path
                 d="M 24 0 L 0 0 0 24"
                 fill="none"
-                stroke="hsl(var(--muted))"
+                stroke="hsl(var(--border))"
                 strokeWidth="1"
                 strokeOpacity={0.5}
               />
@@ -135,13 +136,10 @@ const Hero = () => {
                   {line.map((integration, index) => (
                     <div
                       key={integration.id}
-                      className="size-24 rounded-xl bg-background"
-                      style={{
-                        transform: `rotate(${rotations[i * 5 + index]}deg)`,
-                        animation: animations[i * 5 + index],
-                      }}
+                      className="size-24 rounded-xl"
+                      style={iconStyles[i * 5 + index]}
                     >
-                      <div className="size-full bg-muted/20 p-4 flex items-center justify-center">
+                      <div className="size-full flex items-center justify-center">
                         <Share2 className="text-gray-800" size={48} />
                       </div>
                     </div>
