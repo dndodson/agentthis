@@ -131,7 +131,9 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex gap-2">
-            <Button variant={'outline'}>Log in</Button>
+            <Link href="/sign-in">
+              <Button variant={'outline'}>Sign in</Button>
+            </Link>
             <Button>Sign up</Button>
           </div>
         </nav>
@@ -268,7 +270,9 @@ const Navbar = () => {
                     </a>
                   </div>
                   <div className="mt-2 flex flex-col gap-3">
-                    <Button variant={'outline'}>Log in</Button>
+                    <Link href="/sign-in">
+                      <Button variant={'outline'} className="w-full">Sign in</Button>
+                    </Link>
                     <Button>Sign up</Button>
                   </div>
                 </div>
