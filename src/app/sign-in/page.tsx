@@ -14,10 +14,7 @@ export default function Home() {
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">Login</h1>
-            <p className="text-balance text-muted-foreground">
-              Enter your email below to login to your account
-            </p>
+            <h1 className="text-3xl font-bold">Sign in</h1>
           </div>
           <div className="grid gap-4">
             <div className="grid gap-2">
@@ -58,11 +55,12 @@ export default function Home() {
       </div>
       <div className="hidden bg-muted lg:block">
         <Image
-          src="/placeholder.svg"
-          alt="Image"
-          width="1920"
-          height="1080"
-          className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+          src="https://images.unsplash.com/photo-1542382257-80dedb725088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+          alt="Futuristic technology background"
+          width={1920}
+          height={1080}
+          className="h-full w-full object-cover"
+          priority
         />
       </div>
     </div>

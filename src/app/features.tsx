@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src/components/ui/card";
 import { ChartArea, DollarSign, Lock } from 'lucide-react';
+import Link from 'next/link';
 
 const featuresData = [
   {
@@ -14,7 +15,7 @@ const featuresData = [
   },
   {
     title: "Analytics",
-    description: "Understand how your content is used and tune your AI strategy",
+    description: "Use data to tune your AI strategy",
     icon: <ChartArea className="size-8 text-primary" />,
   },
 ];
@@ -26,15 +27,17 @@ const Features = () => {
         <h2 className="text-4xl font-bold text-center mb-12">Platform</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuresData.map((feature, index) => (
-            <Card key={index} className="bg-white">
-              <CardHeader className="flex flex-col items-center">
-                {feature.icon}
-                <CardTitle className="text-2xl mt-4">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 text-center">{feature.description}</CardDescription>
-              </CardContent>
-            </Card>
+            <Link key={index} href={`/platform/${feature.title.toLowerCase()}`}>
+              <Card className="bg-white hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="flex flex-col items-center">
+                  {feature.icon}
+                  <CardTitle className="text-2xl mt-4">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600 text-center">{feature.description}</CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
