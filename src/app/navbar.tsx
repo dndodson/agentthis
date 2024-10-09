@@ -1,4 +1,5 @@
 import { ChartArea, DollarSign, Lock, Menu, Share2 } from 'lucide-react';
+import Link from 'next/link';
 
 import {
   Accordion,
@@ -50,10 +51,10 @@ const Navbar = () => {
       <div className="container">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Share2 className="h-8 w-8 text-gray-800 transform scale-x-[-1]" />
               <span className="text-xl font-bold text-primary">AgentThis</span>
-            </div>
+            </Link>
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
@@ -70,7 +71,7 @@ const Navbar = () => {
                                 className={cn(
                                   'flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
                                 )}
-                                href="#"
+                                href={`/platform/${item.title.toLowerCase()}`}
                               >
                                 {item.icon}
                                 <div>
@@ -91,7 +92,8 @@ const Navbar = () => {
                 </NavigationMenuList>
               </NavigationMenu>
 
-              <a
+              <Link
+                href="/blog"
                 className={cn(
                   'text-muted-foreground',
                   navigationMenuTriggerStyle,
@@ -99,11 +101,11 @@ const Navbar = () => {
                     variant: 'ghost',
                   }),
                 )}
-                href="#"
               >
                 Blog
-              </a>
-              <a
+              </Link>
+              <Link
+                href="/pricing"
                 className={cn(
                   'text-muted-foreground',
                   navigationMenuTriggerStyle,
@@ -111,11 +113,11 @@ const Navbar = () => {
                     variant: 'ghost',
                   }),
                 )}
-                href="#"
               >
                 Pricing
-              </a>
-              <a
+              </Link>
+              <Link
+                href="/team"
                 className={cn(
                   'text-muted-foreground',
                   navigationMenuTriggerStyle,
@@ -123,10 +125,9 @@ const Navbar = () => {
                     variant: 'ghost',
                   }),
                 )}
-                href="#"
               >
                 Team
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex gap-2">
@@ -171,7 +172,7 @@ const Navbar = () => {
                             className={cn(
                               'flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
                             )}
-                            href="#"
+                            href={`/platform/${item.title.toLowerCase()}`}
                           >
                             {item.icon}
                             <div>
@@ -187,15 +188,15 @@ const Navbar = () => {
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
-                  <a href="#" className="font-semibold">
+                  <Link href="/blog" className="font-semibold">
                     Blog
-                  </a>
-                  <a href="#" className="font-semibold">
+                  </Link>
+                  <Link href="/pricing" className="font-semibold">
                     Pricing
-                  </a>
-                  <a href="#" className="font-semibold">
+                  </Link>
+                  <Link href="/team" className="font-semibold">
                     Team
-                  </a>
+                  </Link>
                 </div>
                 <div className="border-t pt-4">
                   <div className="grid grid-cols-2 justify-start">
