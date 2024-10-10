@@ -165,7 +165,7 @@ const Navbar = () => {
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="products" className="border-b-0">
                       <AccordionTrigger className="mb-4 py-0 font-semibold hover:no-underline">
-                        Features
+                        Platform
                       </AccordionTrigger>
                       <AccordionContent className="mt-2">
                         {subMenuItemsOne.map((item, idx) => (
